@@ -1,0 +1,3 @@
+public enum GoodsType {
+    APPLE,WATERMELON,BEEF,WASHINGLIQUID
+}

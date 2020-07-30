@@ -1,15 +1,15 @@
-import java.math.BigDecimal;
+package newWay;
 
 public class Goods {
-    private int price;
-    private GoodsType goodsType;
+    int price;
+    GoodsType goodsType;
 
-    public Goods(int price,GoodsType goodsType) {
+    public Goods(int price, GoodsType goodsType) {
         this.price = price;
         this.goodsType = goodsType;
     }
 
-    public int  getPrice() {
+    public int getPrice() {
         return price;
     }
 

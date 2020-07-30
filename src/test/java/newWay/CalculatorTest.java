@@ -55,4 +55,18 @@ public class CalculatorTest {
         assertThat(count, is(1067));
     }
 
+    @Test
+    public void should_return_3000count_when_calculate_given_tv2000() {
+        //given
+        List<ChargeWay> chargeWays = Arrays.asList(new PromotionPlusChargeWay());
+        Goods tv = new Goods( 2000,GoodsType.TV);
+        List<Goods> goods = new ArrayList<>();
+        goods.add(tv);
+        Calculator calculator = new Calculator();
+        //when
+        int count = calculator.calculate(goods,chargeWays);
+        //then
+        assertThat(count, is(3000));
+    }
+
 }

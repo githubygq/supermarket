@@ -22,4 +22,23 @@ public class CalculatorTest {
         //then
         assertThat(count, is(110));
     }
+
+    @Test
+    public void should_return_100count_when_calculate_given_goods_apple10_watermelon30_washingliquid20(){
+        //given
+        List<ChargeWay> chargeWays = Arrays.asList(new PromotionChargeWay());
+        Goods apple = new Goods( 10,GoodsType.APPLE);
+        Goods watermelon = new Goods( 30,GoodsType.WATERMELON);
+        Goods washingliquid = new Goods( 20,GoodsType.WASHINGLIQUID);
+        List<Goods> goods = new ArrayList<>();
+        goods.add(apple);
+        goods.add(watermelon);
+        goods.add(washingliquid);
+        Calculator calculator = new Calculator();
+        //when
+        int count = calculator.calculate(goods,chargeWays);
+        //then
+        assertThat(count, is(100));
+    }
+
 }

@@ -41,4 +41,18 @@ public class CalculatorTest {
         assertThat(count, is(100));
     }
 
+    @Test
+    public void should_return_1067count_when_calculate_given_fridge2350() {
+        //given
+        List<ChargeWay> chargeWays = Arrays.asList(new NormalPlusChargeWay());
+        Goods fridge = new Goods( 2350,GoodsType.FRIDGE);
+        List<Goods> goods = new ArrayList<>();
+        goods.add(fridge);
+        Calculator calculator = new Calculator();
+        //when
+        int count = calculator.calculate(goods,chargeWays);
+        //then
+        assertThat(count, is(1067));
+    }
+
 }

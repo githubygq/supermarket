@@ -5,13 +5,15 @@ import java.util.List;
 public class NormalPlusChargeWay extends ChargeWay{
     @Override
     boolean isInScope(List<Goods> goods) {
-        return (getTotal(goods)>1000)&&(!super.isContionsPromotion(goods));
+        return (!super.isContionsPromotion(goods));
     }
 
     @Override
     int getCount(List<Goods> goods) {
         int result = getTotal(goods);
-        result=1000+(result-1000)/20;
+        if(result>1000){
+            result=1000+(result-1000)/20;
+        }
         return result;
     }
 

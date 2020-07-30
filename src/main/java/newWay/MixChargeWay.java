@@ -6,7 +6,7 @@ import java.util.List;
 public class MixChargeWay extends ChargeWay {
     @Override
     boolean isInScope(List<Goods> goods) {
-        return super.isContionsPromotion(goods)&&(getTotal(goods)>1000&&(!isAllPromotion(goods)));
+        return super.isContionsPromotion(goods)&&(!isAllPromotion(goods));
     }
 
     @Override

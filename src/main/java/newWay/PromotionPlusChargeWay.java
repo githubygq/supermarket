@@ -5,7 +5,7 @@ import java.util.List;
 public class PromotionPlusChargeWay extends ChargeWay {
     @Override
     boolean isInScope(List<Goods> goods) {
-        return (getTotal(goods)>1000)&&(super.isAllPromotion(goods));
+        return (super.isAllPromotion(goods));
     }
 
     @Override

@@ -9,10 +9,12 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class CalculatorTest {
+
+    List<ChargeWay> chargeWays = Arrays.asList(new MixChargeWay(),new NormalPlusChargeWay(),new PromotionPlusChargeWay());
     @Test
     public void should_return_110count_when_calculate_given_goods_price_110(){
         //given
-        List<ChargeWay> chargeWays = Arrays.asList(new NormalChargeWay());
+
         Goods washingliquid = new Goods( 110,GoodsType.WASHINGLIQUID);
         List<Goods> goods = new ArrayList<>();
         goods.add(washingliquid);
@@ -26,7 +28,7 @@ public class CalculatorTest {
     @Test
     public void should_return_100count_when_calculate_given_goods_apple10_watermelon30_washingliquid20(){
         //given
-        List<ChargeWay> chargeWays = Arrays.asList(new PromotionChargeWay());
+
         Goods apple = new Goods( 10,GoodsType.APPLE);
         Goods watermelon = new Goods( 30,GoodsType.WATERMELON);
         Goods washingliquid = new Goods( 20,GoodsType.WASHINGLIQUID);
@@ -41,10 +43,11 @@ public class CalculatorTest {
         assertThat(count, is(100));
     }
 
+    //chargeWays = Arrays.asList(new MixChargeWay(),new NormalPlusChargeWay(),new PromotionPlusChargeWay());
     @Test
     public void should_return_1067count_when_calculate_given_fridge2350() {
         //given
-        List<ChargeWay> chargeWays = Arrays.asList(new NormalPlusChargeWay());
+
         Goods fridge = new Goods( 2350,GoodsType.FRIDGE);
         List<Goods> goods = new ArrayList<>();
         goods.add(fridge);
@@ -58,7 +61,7 @@ public class CalculatorTest {
     @Test
     public void should_return_3000count_when_calculate_given_tv2000() {
         //given
-        List<ChargeWay> chargeWays = Arrays.asList(new PromotionPlusChargeWay());
+
         Goods tv = new Goods( 2000,GoodsType.TV);
         List<Goods> goods = new ArrayList<>();
         goods.add(tv);
@@ -72,7 +75,7 @@ public class CalculatorTest {
     @Test
     public void should_return_1890count_when_calculate_given_tv800_2350() {
         //given
-        List<ChargeWay> chargeWays = Arrays.asList(new MixChargeWay());
+
         Goods tv = new Goods( 800,GoodsType.TV);
         Goods washingmachine = new Goods( 2000,GoodsType.WASHINGMACHINE);
         List<Goods> goods = new ArrayList<>();
